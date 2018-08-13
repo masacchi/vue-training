@@ -3,21 +3,50 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Vue Sample</title>
+	
 	<!-- 開発バージョン、便利なコンソールの警告が含まれています -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<link rel="stylesheet" href="./sample.css" />
 </head>
 <body>
 	<div id="app">
 		{{ message }}
 	</div>
+
+	<div id="app-2">
+		<span v-bind:title="message">
+			Hover your mouse over me for a few seconds
+			 to see my dynamically bound title!
+		</span>
+	</div>
 	
-	<script>
-		var app = new Vue({
-			el: '#app',
-			data: {
-				message: 'Hello Vue!!'
-			}
-		});
-	</script>
+	<div id="app-3">
+		<transition name="fade">
+			<span v-if="seen">Now you see me</span>
+		</transition>
+	</div>
+	
+	<div id="app-4">
+		<transition name="fade">
+			<ol>
+				<li v-for="todo in todos">
+					{{ todo.text }}
+				</li>
+			</ol>
+		</transition>
+	</div>
+	
+	<div id="app-5">
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMassage">Reverse Massage</button>
+	</div>
+	
+	<div id="app-6">
+		<p>{{ message }}</p>
+		<input type="text" v-model="message" />
+	</div>
+	
+	<script src="./sample.js"></script>
 </body>
 </html>
