@@ -5,21 +5,19 @@
 	<title>Vue Sample</title>
 	<!-- 開発バージョン、便利なコンソールの警告が含まれています -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script>
-		document.addEventListener('load', function() {
-			var app = new Vue({
-				el: '#app',
-				data: {
-					message: 'Hello'
-				}
-			});
-		});
-	
-	</script>
 </head>
 <body>
 	<div id="app">
-		{{message}}
+		{{ message }}
 	</div>
+	
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello'
+			}
+		});
+	</script>
 </body>
 </html>
